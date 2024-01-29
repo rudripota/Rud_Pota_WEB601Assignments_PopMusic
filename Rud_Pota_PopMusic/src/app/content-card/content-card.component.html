@@ -9,12 +9,15 @@
     </div>
   </div> -->
 
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <header class="title">{{content.title}}<header>
+
   <div class="content-card">
     <img src="{{content.imgURL}}" alt="{{content.title}}" class="imgs" (click)="onCardClick(content)">
-    <h3 style="text-align: center;">{{content.title}}</h3>
     <p class="des"><i>Description: </i>{{content.description}}</p>
     <p><i>Creator: </i>{{content.creator}}</p>
     <p><i>Type: </i> {{content.type}}</p>
-    <i>Tags:</i>
+    <i>#Tags:</i>
     <p>{{ content.tags.join(', ') }}</p>
 </div>

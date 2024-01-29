@@ -1,4 +1,14 @@
 .content-card{
     text-align: center;
     border: 1px solid black;
-margin: 20px;}
+    margin: 20px;
+    padding: 10px;
+    font-family: serif;
+    font-size: 20px;
+}
+
+.title{
+    font-family: "Sofia", sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
