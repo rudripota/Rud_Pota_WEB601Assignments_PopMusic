@@ -1,1 +1,7 @@
-<p>content-list works!</p>
+<!-- <p>content-list works!</p> -->
+
+<div *ngFor="let content of contentArray.slice(0, 5); 
+let first = first" class="content-card-container" [ngClass]="{'first': first}" >
+
+<app-content-card [content]="content"></app-content-card>
+</div>

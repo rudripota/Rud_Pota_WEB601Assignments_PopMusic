@@ -1,4 +1,4 @@
-<p>content-card works!</p>
+<!-- <p>content-card works!</p> -->
 
 <!-- <div>
     <div>
@@ -8,3 +8,13 @@
         }
     </div>
   </div> -->
+
+  <div class="content-card">
+    <img src="{{content.imgURL}}" alt="{{content.title}}" class="imgs" (click)="onCardClick(content)">
+    <h3 style="text-align: center;">{{content.title}}</h3>
+    <p class="des"><i>Description: </i>{{content.description}}</p>
+    <p><i>Creator: </i>{{content.creator}}</p>
+    <p><i>Type: </i> {{content.type}}</p>
+    <i>Tags:</i>
+    <p>{{ content.tags.join(', ') }}</p>
+</div>
