@@ -87,7 +87,7 @@ export class ContentListComponent {
   searchClr: string = '';
 
   searchCard(): void{
-    const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
+    const foundContent = this.contentArray.find(content => content.title.toLowerCase() === this.searchTitle.toLowerCase()); 
 
     if (foundContent) {
       this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
