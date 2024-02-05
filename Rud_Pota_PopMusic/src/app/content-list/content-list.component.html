@@ -6,7 +6,7 @@ let first = first" class="content-card-container" [ngClass]="{'first': first}" >
 <app-content-card [content]="content"></app-content-card>
 </div> -->
 
-<input type="text" [(ngModel)]="searchTitle" placeholder="Enter type here...">
+<input type="text" [(ngModel)]="searchTitle" placeholder="Use me to search...">
 <button (click)="searchCard()">Submit</button>
 <p [style.color]="searchClr">{{searchMsg}}</p>
 
