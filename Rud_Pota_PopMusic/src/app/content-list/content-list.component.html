@@ -1,7 +1,20 @@
 <!-- <p>content-list works!</p> -->
 
-<div *ngFor="let content of contentArray.slice(0, 5); 
+<!-- <div *ngFor="let content of contentArray.slice(0, 5); 
 let first = first" class="content-card-container" [ngClass]="{'first': first}" >
 
 <app-content-card [content]="content"></app-content-card>
-</div>
+</div> -->
+
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter type here...">
+<button (click)="searchCard()">Submit</button>
+<p [style.color]="searchClr">{{searchMsg}}</p>
+
+<h2>No type</h2>
+<app-content-card *ngFor="let item of (contentArray | filter: ' ')" [content]="item"></app-content-card>
+
+<h2>Pop</h2>
+<app-content-card *ngFor="let item of (contentArray | filter: 'Pop')" class="type-pop" [content]="item"></app-content-card>
+
+<h2>Upcoming</h2>
+<app-content-card *ngFor="let item of (contentArray | filter: 'Upcoming')" class="type-upcoming" [content]="item"></app-content-card>

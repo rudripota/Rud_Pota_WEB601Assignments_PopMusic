@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ContentCardComponent } from "../content-card/content-card.component";
+import { FilterPipe } from "../filter.pipe";
 
 @Component({
     selector: 'app-content-list',
     standalone: true,
     templateUrl: './content-list.component.html',
     styleUrl: './content-list.component.css',
-    imports: [CommonModule, ContentCardComponent]
+    imports: [CommonModule, ContentCardComponent, FilterPipe, FormsModule]
 })
 
 export class ContentListComponent {
@@ -78,5 +80,22 @@ export class ContentListComponent {
         type: 'Upcoming',
         tags: ["Electropop","Synth-pop","Pop-rock"],
       }]
+  }
+
+  searchTitle: string = '';
+  searchMsg: string = '';
+  searchClr: string = '';
+
+  searchCard(): void{
+    const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
+
+    if (foundContent) {
+      this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
+      this.searchClr = 'green';
+    }
+    else {
+      this.searchMsg = `Content with title "${this.searchTitle}" does not exist.`;
+      this.searchClr = 'red';
+    }
   }
 }
