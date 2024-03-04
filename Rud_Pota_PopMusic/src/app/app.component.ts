@@ -4,13 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import { ContentCardComponent } from "./content-card/content-card.component";
 import { ContentListComponent } from "./content-list/content-list.component";
 import { HoverAffectDirective } from './hover-affect.directive';
+import { CreateContentComponent } from './create-content/create-content.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, ContentCardComponent, ContentListComponent, HoverAffectDirective]
+    imports: [CommonModule, RouterOutlet, ContentCardComponent, ContentListComponent, HoverAffectDirective, CreateContentComponent]
 })
 export class AppComponent {
   title = 'Pop Music by Rudri';

@@ -1,0 +1,53 @@
+<!-- <p>create-content works!</p>
+
+<div>
+    <label>ID:</label>
+    <input [(ngModel)]="content.id" type="number" required>
+  </div>
+  <div>
+    <label>Title:</label>
+    <input [(ngModel)]="content.title" type="text" required>
+  </div>
+  <div>
+    <label>Description:</label>
+    <input [(ngModel)]="content.description" type="text" required>
+  </div>
+  <div>
+    <label>Creator:</label>
+    <input [(ngModel)]="content.creator" type="text" required>
+  </div>
+  <div>
+    <label>Image URL:</label>
+    <input [(ngModel)]="content.imgUrl" type="text">
+  </div>
+  <div>
+    <label>Type:</label>
+    <input [(ngModel)]="content.type" type="text">
+  </div>
+  <div>
+    <label>Tags:</label>
+    <input [(ngModel)]="content.tags" type="text">
+  </div>
+  <button (click)="submitContent()">Submit</button> -->
+
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" [(ngModel)]="newContent.id" required>
+    
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="newContent.title" required>
+    
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="newContent.description" required>
+    
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" [(ngModel)]="newContent.creator" required>
+    
+    <label for="type">Type:</label>
+    <input type="text" id="type" [(ngModel)]="newContent.type" required>
+    
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" [(ngModel)]="tags" required>
+    
+    <button (click)="submitContent()">Submit</button>
+</div>

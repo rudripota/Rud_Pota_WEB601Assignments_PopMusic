@@ -4,17 +4,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContentCardComponent } from "../content-card/content-card.component";
 import { FilterPipe } from "../filter.pipe";
+import { CreateContentComponent } from "../create-content/create-content.component";
 
 @Component({
     selector: 'app-content-list',
     standalone: true,
     templateUrl: './content-list.component.html',
     styleUrl: './content-list.component.css',
-    imports: [CommonModule, ContentCardComponent, FilterPipe, FormsModule]
+    imports: [CommonModule, ContentCardComponent, FilterPipe, FormsModule, CreateContentComponent]
 })
 
 export class ContentListComponent {
   contentArray: Content[];
+
 
   constructor() {
     this.contentArray = [{
@@ -107,4 +109,17 @@ export class ContentListComponent {
       this.searchClr = 'red';
     }
   }
+
+  onContentAdded(newContent: any) {
+    // Handle the addition of new content
+    console.log(newContent);
+    const contentToAdd = { ...newContent, tags: Array.isArray(newContent.tags) ? newContent.tags : [] };
+    this.contentArray.push(contentToAdd);
+  }
+
+  // onContentCreated(newContent: any) {
+  //   // Simulate content addition
+  //   this.contents.push({ ...newContent }); // Clone the content
+  // }
+  
 }
