@@ -112,7 +112,7 @@ export class ContentListComponent {
 
   onContentAdded(newContent: any) {
     // Handle the addition of new content
-    console.log(newContent);
+    console.log(newContent.creator);
     const contentToAdd = { ...newContent, tags: Array.isArray(newContent.tags) ? newContent.tags : [] };
     this.contentArray.push(contentToAdd);
   }

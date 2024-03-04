@@ -1,6 +1,6 @@
 <!-- <p>content-list works!</p> -->
 
-<app-create-content (createContent)="onContentAdded($event)"></app-create-content>
+<app-create-content (contentAdded)="onContentAdded($event)"></app-create-content>
 
 <div *ngFor="let content of contentArray; 
 let first = first" class="content-card-container" [ngClass]="{'first': first}" >
