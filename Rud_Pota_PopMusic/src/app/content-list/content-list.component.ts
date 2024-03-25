@@ -5,19 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { ContentCardComponent } from "../content-card/content-card.component";
 import { FilterPipe } from "../filter.pipe";
 import { PopServiceService } from '../pop-service.service';
+import { ModifyContentComponentComponent } from "../modify-content-component/modify-content-component.component";
+import { MessagesServiceService } from '../messages-service.service';
 
 @Component({
     selector: 'app-content-list',
     standalone: true,
     templateUrl: './content-list.component.html',
     styleUrl: './content-list.component.css',
-    imports: [CommonModule, ContentCardComponent, FilterPipe, FormsModule]
+    imports: [CommonModule, ContentCardComponent, FilterPipe, FormsModule, ModifyContentComponentComponent]
 })
 
 export class ContentListComponent implements OnInit {
   contentArray: Content[] = [];
 
-  constructor(private PopService: PopServiceService) {
+  constructor(private PopService: PopServiceService, private messageService: MessagesServiceService) {
     // this.contentArray = [{
     //     id: 1,
     //     title: 'Midnights',
@@ -90,6 +92,12 @@ export class ContentListComponent implements OnInit {
     //     type: 'Upcoming',
     //     tags: ["Electropop","Synth-pop","Pop-rock"],
     //   }]
+
+  }
+
+  onContentAdded(newContent: Content) {
+    this.contentArray.push(newContent);
+    this.messageService.sendMessage(`Content '${newContent.title}' added successfully!`);
   }
   ngOnInit() {
     this.loadContentArray();
