@@ -30,7 +30,7 @@ export class ModifyContentComponentComponent {
     this.newContent.tags = this.tagsString.split(',');
 
     this.PopService.addContent(this.newContent).subscribe((newContentWithId) => {
-      this.contentAdded.emit(newContentWithId); 
+      // this.contentAdded.emit(newContentWithId); 
       this.clearFields(); 
     });
   }
